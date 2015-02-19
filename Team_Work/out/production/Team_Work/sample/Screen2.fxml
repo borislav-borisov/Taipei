@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+
+<AnchorPane id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" stylesheets="@../style/mainScreenStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Screen2Controller">
+   <children>
+      <VBox layoutX="240.0" layoutY="135.0" spacing="20.0">
+         <children>
+            <Button layoutX="264.0" layoutY="137.0" mnemonicParsing="false" onAction="#goToScreen1" prefWidth="100.0" text="Screen 1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="264.0" layoutY="188.0" mnemonicParsing="false" onAction="#goToScreen3" prefWidth="100.0" text="Screen 3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Label layoutX="222.0" layoutY="48.0" text="Screen 2" AnchorPane.topAnchor="48.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <VBox layoutX="915.0" layoutY="473.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <Button layoutX="927.0" layoutY="473.0" mnemonicParsing="false" onAction="#setPlaersName" opacity="0.7" prefWidth="100.0" text="Set Players">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <VBox layoutX="939.0" layoutY="519.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <children>
+                  <Button layoutX="939.0" layoutY="519.0" mnemonicParsing="false" onAction="#goToScreen1" opacity="0.7" prefWidth="100.0" text="Home">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="527.0" layoutY="353.0" mnemonicParsing="false" onAction="#exitPlatform" opacity="0.7" prefWidth="100.0" text="Exit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <Separator layoutX="717.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="717.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="throwDiceBtn" disable="true" layoutX="262.0" layoutY="344.0" mnemonicParsing="false" onAction="#throwDices" text="Throw Dices" visible="false">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="informationLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="130.0" layoutY="283.0" text="First you must fill players information by clicking &quot;Set Players&quot; btn!&quot;" textAlignment="CENTER" visible="false">
+         <effect>
+            <Glow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#5b4d4d" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <VBox layoutY="10.0" spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Circle fill="DODGERBLUE" layoutX="60.0" layoutY="60.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+            <TextField fx:id="player1Name" editable="false" layoutX="10.0" layoutY="120.0" prefWidth="100.0" style="-fx-background-color: none;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="player1Money" editable="false" layoutY="150.0" prefWidth="100.0" style="-fx-background-color: none;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+         </children>
+      </VBox>
+      <VBox layoutX="600.0" layoutY="455.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="300.0">
+         <children>
+            <TextField fx:id="player2Name" editable="false" prefWidth="100.0" style="-fx-background-color: none;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="player2Money" editable="false" prefWidth="100.0" style="-fx-background-color: none;">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextField>
+            <Circle fill="DODGERBLUE" layoutX="616.0" layoutY="486.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="300.0" />
+         </children>
+      </VBox>
+      <Button fx:id="startBtn" layoutX="370.0" layoutY="344.0" mnemonicParsing="false" onAction="#starGame" text="Start Game">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
